@@ -1,0 +1,60 @@
+Write a procedure that will accept an insurance type 
+( the name of the insurance, not the id) as an input parameter and 
+check if there is any rental associated with that insurance at all.  
+The procedure will follow the steps given below to do this - 
+
+Step 1:  check if a valid insurance type was given by checking if 
+that insurance type exists in the insurance_types table.  Insurance 
+types can be - FIRE, FLOOD, EARTHQUAKE.  If the insurance does not 
+exist, then it will throw an error saying "Invalid insurance type."   
+If the insurance type exist, then it will go to step 2.
+
+Step 2:  Now it will hit rental_insurance table to see if there is 
+any record of that insurance type.  If there is, then the procedure 
+will return the word "YES", else it will return the word "NO."
+
+DELIMITER $$
+CREATE PROCEDURE check_rental_ins(IN type varchar(15), OUT message)
+NONDETERMINISTIC
+BEGIN
+	DECLARE ins_type VARCHAR(15) DEFAULT 'FIRE';
+	DECLARE msg = '';
+	SELECT insurance_types.insurance_type 
+	INTO ins_type 
+	FROM insurance_types
+	JOIN rental_insurance
+	ON insurance_types.id=rental_insurance.id;
+		IF (ins_type == 'FIRE' OR ins_type == 'FLOOD' OR ins_type == 'EARTHQUAKE',
+		'YES', 'NO')
+		ELSE
+		SET msg = 'Invalid insurance type.';
+		END IF;
+END$$
+DELIMITER ;
+
+--------------------------
+Write a function that will take a phone number as an input and then 
+find out how many rentals are associated with that phone number.  It 
+will return the number of rentals.    It must return 0 if there no 
+rental associated with the number.
+
+DELIMITER $$
+CREATE FUNCTION numRentals(phoneNum varchar(15))
+RETURNS int
+NONDETERMINISTIC
+BEGIN
+	DECLARE rentNo int;
+	SET rentNo = IF(phoneNum=renters.renters_phone, 
+	SELECT count(rentals) as 'No. of Rentals'
+	FROM renters
+	JOIN rentals
+	ON renters.id=rentals.id,
+	0);
+	return (rentNo);
+END$$
+DELIMITER ; 
+
+resources:
+
+- https://www.softwaretestinghelp.com/mysql-stored-procedure/#Creating_a_Procedure_with_Input_Parameters
+- https://www.w3schools.com/mysql/func_mysql_if.asp
