@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "6446cc3d02d318337b476e80"
+  },
+  "dept_no": 1,
+  "dept_name": "Management"
+},{
+  "_id": {
+    "$oid": "6446f05502d318337b476e81"
+  },
+  "dept_no": 2,
+  "dept_name": "Technology"
+}]

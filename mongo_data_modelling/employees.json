@@ -1,0 +1,88 @@
+[{
+  "_id": {
+    "$oid": "6443445602d318337b476e79"
+  },
+  "emp_no": 1,
+  "birth_date": {
+    "$date": "1993-10-16T00:00:00.000Z"
+  },
+  "first_name": "McKenzie",
+  "last_name": "Church",
+  "gender": "F",
+  "hire_date": {
+    "$date": "1970-01-01T00:00:02.021Z"
+  }
+},{
+  "_id": {
+    "$oid": "644345e502d318337b476e7a"
+  },
+  "emp_no": 3333333,
+  "last_name": "Sanchez",
+  "gender": "M",
+  "first_name": "Frank",
+  "birth_date": {
+    "$date": "1970-01-01T00:00:01.991Z"
+  }
+},{
+  "_id": {
+    "$oid": "644345e502d318337b476e7b"
+  },
+  "emp_no": 7777755,
+  "gender": "F",
+  "first_name": "Alex"
+},{
+  "_id": {
+    "$oid": "644345e502d318337b476e7c"
+  },
+  "last_name": "Church",
+  "first_name": "Provolone",
+  "emp_no": 5555555
+},{
+  "_id": {
+    "$oid": "64434a5a02d318337b476e7e"
+  },
+  "emp_no": 7755644,
+  "titles": {
+    "title": "Project Manager",
+    "from_date": {
+      "$date": "1970-01-01T00:00:02.018Z"
+    }
+  },
+  "first_name": "Ken",
+  "last_name": "Jones"
+},{
+  "_id": {
+    "$oid": "6446c67c02d318337b476e7f"
+  },
+  "emp_no": {
+    "$numberLong": "88877766655"
+  },
+  "last_name": "Jones",
+  "hire_date": {
+    "$date": "1970-01-01T00:00:01.986Z"
+  },
+  "titles": {
+    "emp_no": {
+      "$numberLong": "88877766655"
+    },
+    "title": "Data Scientist",
+    "from_date": {
+      "$date": "1970-01-01T00:00:01.983Z"
+    }
+  },
+  "salaries": {
+    "emp_no": {
+      "$numberLong": "88877766655"
+    },
+    "salary": 100000,
+    "from_date": {
+      "$date": "1970-01-01T00:00:01.983Z"
+    }
+  },
+  "dept_manager": {
+    "dept_no": 1,
+    "emp_no": 7755644,
+    "from_date": 1968,
+    "to_date": 1975
+  }
+}]

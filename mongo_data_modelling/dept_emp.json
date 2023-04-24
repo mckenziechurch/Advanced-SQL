@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "6446fd8302d318337b476e84"
+  },
+  "emp_no": {
+    "$ref": "employees",
+    "$id": {
+      "$oid": "6443445602d318337b476e79"
+    },
+    "$db": "employees"
+  },
+  "dept_no": {
+    "$ref": "departments",
+    "$id": {
+      "$oid": "6446f05502d318337b476e81"
+    },
+    "$db": "employees"
+  }
+}]
